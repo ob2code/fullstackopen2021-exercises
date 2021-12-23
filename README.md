@@ -1,2 +1,3 @@
 # fullstackopen2021-exercises
-Exercises for fullstackopen.com
+
+## Solutions for fullstackopen.com
