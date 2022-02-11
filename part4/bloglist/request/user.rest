@@ -1,0 +1,41 @@
+###
+GET http://localhost:3003/api/users HTTP/1.1
+
+### create user
+POST http://localhost:3003/api/users/
+Content-Type: application/json
+
+{
+    "username": "root",
+    "name": "Huy Dang",
+    "password": "plainpwd"
+}
+
+### create user
+POST http://localhost:3003/api/users/
+Content-Type: application/json
+
+{
+    "username": "harry",
+    "name": "Harry Potter",
+    "password": "plainpwd"
+}
+
+### user login
+POST http://localhost:3003/api/login/
+Content-Type: application/json
+
+{
+    "username": "harry",
+    "password": "plainpwd"
+}
+
+
+### user login
+POST http://localhost:3003/api/login/
+Content-Type: application/json
+
+{
+    "username": "root",
+    "password": "plainpwd"
+}

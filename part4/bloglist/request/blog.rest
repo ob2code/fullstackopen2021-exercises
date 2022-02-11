@@ -1,0 +1,29 @@
+@token = bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhhcnJ5IiwiaWQiOiI2MjA2NDY3Y2I4NDQyNTFmNTc0MTMzMmYiLCJpYXQiOjE2NDQ1OTExNDgsImV4cCI6MTY0NDU5NDc0OH0.b_lVWDksWyBOH0uY83HjTCexuT0aZojKF-fD5CLnBpY
+
+###
+GET http://localhost:3003/api/blogs HTTP/1.1
+Authorization: {{token}}
+
+###
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "title": "Get the JWT Handbook for free!",
+    "author": "Mongooes",
+    "url": "www.example.com",
+    "likes": 18
+}
+
+###
+DELETE  http://localhost:3003/api/blogs/62063c94c24247a947616447
+Authorization: {{token}}
+
+###
+PUT http://localhost:3003/api/blogs/61ee1fc83acdc48c85cf4248 HTTP/1.1
+content-type: application/json
+
+{    
+    "likes": 2
+}
