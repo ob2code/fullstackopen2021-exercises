@@ -2,4 +2,4 @@
 
 ## Part 4: Testing Express servers, user administration
 
-- [4.1-4.25: Course information](./bloglist)
+- [4.1-4.25: Blog list](./bloglist)
