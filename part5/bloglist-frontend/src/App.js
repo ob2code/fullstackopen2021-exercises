@@ -11,8 +11,8 @@ import loginService from './services/login'
 const App = () => {
   const [blogs, setBlogs] = useState([])
   const [msgbox, setMsgbox] = useState({ msg: '', isError: false })
-  const [username, setUsername] = useState('harry')
-  const [password, setPassword] = useState('plainpwd')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const blogFormRef = useRef()
 
@@ -55,11 +55,12 @@ const App = () => {
       blogFormRef.current.toggleVisibility()
 
       console.log('addedBlog:', addedBlog)
+
       setMsgbox({ msg: `A new blog have been successfully created by ${user.name}!`, isError: false })
       setTimeout(() => {
         setMsgbox({ msg: '' })
       }, 5000)
-      setBlogs(blogs.concat(addedBlog))
+      setBlogs(blogs.concat({ ...addedBlog, user: user }))
 
     }
     catch (error) {
@@ -101,28 +102,30 @@ const App = () => {
   }
 
   const loginForm = () => (
-
     <form onSubmit={handleLogin}>
+      <h2>Welcome to blogs app</h2>
       <Notification msg={msgbox.msg} isError={msgbox.isError} />
       <div>
         username
         <input
-          type="text"
+          id='username'
+          type='text'
           value={username}
-          name="Username"
+          name='Username'
           onChange={({ target }) => setUsername(target.value)}
         />
       </div>
       <div>
         password
         <input
-          type="password"
+          id='password'
+          type='password'
           value={password}
-          name="Password"
+          name='Password'
           onChange={({ target }) => setPassword(target.value)}
         />
       </div>
-      <button type="submit">login</button>
+      <button type='submit'>login</button>
     </form>
   )
 

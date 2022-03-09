@@ -38,14 +38,17 @@ const Blog = ({ blog, increaseLike, removeBlog }) => {
     }
   }
 
+
   return (
     <div style={blogStyle}>
       <div className='blog'>
-        {blog.title} {blog.author} <button onClick={toggleVisibility}>{label}</button>
+        <div className='blogtitle'>
+          {blog.title} {blog.author} <button onClick={toggleVisibility}>{label}</button>
+        </div>
         <div data-testid="blogdetail" className='blogdetails' style={isVisible}>
           <div>🌍 {blog.url}</div>
-          <div>👍 {likes} <button onClick={handleLike}>like</button></div>
-          <div>✍ {blog.user.username}</div>
+          <div>👍 <span id="likes">{likes}</span> <button onClick={handleLike}>like</button></div>
+          <div>✍ {blog.user.name}</div>
           <div><button onClick={handleRemove}>remove ❌</button></div>
         </div>
       </div>
